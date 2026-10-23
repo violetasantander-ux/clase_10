@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML, SVG, CSS Y JS</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+    <style>
+	    body {
+	         font-family: "Google Sans", sans-serif;
+	   }
+	   </style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="805" height="600" viewBox="0 0 805 600" font-family="Arial, sans-serif">
+  <style>
+    .grid  { fill: none; stroke: lightgray; }
+    .axis  { stroke: black; }
+    .label { font-size: 12px; text-anchor: middle; dominant-baseline: central; }
+    .area  { fill-opacity: 0.5; }
+    .tick text { font-family: sans-serif; font-size: 10px; text-anchor: end; dominant-baseline: central; fill: currentColor; }
+    .tick line { stroke: currentColor; }
+  </style>
+
+  <rect width="805" height="600" fill="#fff" />
+  <rect width="805" height="600" fill="none" stroke="#ccc" />
+
+  <g transform="translate(305 315)">
+    <!-- Círculos de la grilla (10 a 90, cada 10) -->
+    <g class="grid">
+      <circle r="257" /><circle r="228" /><circle r="200" /><circle r="171" />
+      <circle r="143" /><circle r="114" /><circle r="86" /><circle r="57" />
+      <circle r="29" />
+    </g>
+
+    <!-- Ejes y etiquetas -->
+    <g id="axes">
+      <line class="axis" x2="0" y2="-285" />
+      <text class="label" x="0" y="-295">Staff with PhD</text>
+
+      <line class="axis" x2="271.05" y2="-88.07" />
+      <text class="label" x="280.56" y="-91.16">Faculty Student</text>
+
+      <line class="axis" x2="167.52" y2="230.57" />
+      <text class="label" x="173.4" y="238.66">International Research Network</text>
+
+      <line class="axis" x2="-167.52" y2="230.57" />
+      <text class="label" x="-173.4" y="238.66">Papers Per Faculty</text>
+
+      <line class="axis" x2="-271.05" y2="-88.07" />
+      <text class="label" x="-280.56" y="-91.16">Citations per Paper</text>
+    </g>
+
+    <!-- Eje Y con escala -->
+    <g id="y-axis" transform="translate(0 -285)" fill="none">
+      <path stroke="currentColor" d="M-6 0H0V285H-6" />
+      <g class="tick" transform="translate(0 28.5)"><line x2="-6" /><text x="-9">90</text></g>
+      <g class="tick" transform="translate(0 57)"><line x2="-6" /><text x="-9">80</text></g>
+      <g class="tick" transform="translate(0 85.5)"><line x2="-6" /><text x="-9">70</text></g>
+      <g class="tick" transform="translate(0 114)"><line x2="-6" /><text x="-9">60</text></g>
+      <g class="tick" transform="translate(0 142.5)"><line x2="-6" /><text x="-9">50</text></g>
+      <g class="tick" transform="translate(0 171)"><line x2="-6" /><text x="-9">40</text></g>
+      <g class="tick" transform="translate(0 199.5)"><line x2="-6" /><text x="-9">30</text></g>
+      <g class="tick" transform="translate(0 228)"><line x2="-6" /><text x="-9">20</text></g>
+      <g class="tick" transform="translate(0 256.5)"><line x2="-6" /><text x="-9">10</text></g>
+      <g class="tick" transform="translate(0 285)"><line x2="-6" /><text x="-9">0</text></g>
+    </g>
+
+    <!-- Series -->
+    <g id="radars">
+      <g id="serie-1" fill="#1f77b4" stroke="#1f77b4">
+        <polygon class="area" points="0,-281 194.97,-63.35 166.93,229.76 -163.4,224.91 -210.18,-68.29" />
+        <circle r="1" cx="0" cy="-281" stroke="none" />
+        <circle r="1" cx="194.97" cy="-63.35" stroke="none" />
+        <circle r="1" cx="166.93" cy="229.76" stroke="none" />
+        <circle r="1" cx="-163.4" cy="224.91" stroke="none" />
+        <circle r="1" cx="-210.18" cy="-68.29" stroke="none" />
+      </g>
+
+      <g id="serie-2" fill="#ff7f0e" stroke="#ff7f0e">
+        <polygon class="area" points="0,-205 62.77,-20.4 166.93,229.76 -166.93,229.76 -208.28,-67.67" />
+        <circle r="1" cx="0" cy="-205" stroke="none" />
+        <circle r="1" cx="62.77" cy="-20.4" stroke="none" />
+        <circle r="1" cx="166.93" cy="229.76" stroke="none" />
+        <circle r="1" cx="-166.93" cy="229.76" stroke="none" />
+        <circle r="1" cx="-208.28" cy="-67.67" stroke="none" />
+      </g>
+
+      <g id="serie-3" fill="#2ca02c" stroke="#2ca02c">
+        <polygon class="area" points="0,-182 101.76,-33.06 165.76,228.14 -149.89,206.3 -238.72,-77.56" />
+        <circle r="1" cx="0" cy="-182" stroke="none" />
+        <circle r="1" cx="101.76" cy="-33.06" stroke="none" />
+        <circle r="1" cx="165.76" cy="228.14" stroke="none" />
+        <circle r="1" cx="-149.89" cy="206.3" stroke="none" />
+        <circle r="1" cx="-238.72" cy="-77.56" stroke="none" />
+      </g>
+
+      <g id="serie-4" fill="#d62728" stroke="#d62728">
+        <polygon class="area" points="0,-84 80.84,-26.27 163.99,225.72 -135.78,186.88 -165.48,-53.77" />
+        <circle r="1" cx="0" cy="-84" stroke="none" />
+        <circle r="1" cx="80.84" cy="-26.27" stroke="none" />
+        <circle r="1"
+		</body>
+</html>
